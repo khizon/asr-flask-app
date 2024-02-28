@@ -26,7 +26,7 @@ def Home():
 
 @flask_app.route('/translate/<model_name>/', methods=['POST'])
 def translate(model_name='MBart'):
-    valid_models = ['MBart']
+    valid_models = ['MBart', 'SeamlessM4T']
 
     if model_name in valid_models:
         model = Translator(model_name)
