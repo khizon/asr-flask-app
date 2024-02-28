@@ -8,4 +8,5 @@ WORKDIR /asr-flask-app
 COPY requirements.txt .
 
 # Install the packages listed in requirements.txt, clearing the cache.
-RUN pip install --no-cache-dir -r requirements.txt
+# RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install -r requirements.txt
