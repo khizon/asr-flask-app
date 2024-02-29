@@ -3,6 +3,7 @@ import pandas as pd
 import sys
 sys.path.append(".")
 from translation_utils import MBartTranslator, Translator
+from app import flask_app
 
 @pytest.fixture
 def translator_MBart():
@@ -33,3 +34,19 @@ def translation_row_invalid():
 
     df = pd.DataFrame([data])
     return df.iloc[0]
+
+@pytest.fixture
+def app():
+    return flask_app
+
+@pytest.fixture
+def translation_data():
+    data = [
+        {
+            'Source': 'Finnish',
+            'Target': 'English',
+            'Text': 'Lorem Ipsum'
+        }
+    ]
+
+    return data

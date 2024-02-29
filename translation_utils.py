@@ -57,8 +57,10 @@ class Translator:
 
         if missing_langs is None:
             row['Translated'] = self.translator.translate(text, src, tgt)
+            row['Error'] = ''
         else:
-            row['Translated'] = missing_langs
+            row['Translated'] = ''
+            row['Error'] = missing_langs
 
         return row
     

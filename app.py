@@ -39,7 +39,7 @@ def translate(model_name='MBart'):
         results = pd.DataFrame(body)
         results = results.apply(lambda row: model.translate(row), axis=1)
 
-        return results[['Translated']].to_dict(orient='records')
+        return results[['Translated', 'Error']].to_dict(orient='records')
     else:
         return "Input data needed", 500
     
